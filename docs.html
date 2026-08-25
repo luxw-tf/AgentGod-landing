@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Docs — AgentGod</title>
+<meta name="description" content="Install AgentGod, write an objective, approve a plan, read the trace, and halt a fleet.">
+<meta name="theme-color" content="#08080A">
+<meta property="og:title" content="Docs — AgentGod">
+<meta property="og:description" content="Install, write an objective, approve a plan, read the trace.">
+<meta property="og:image" content="assets/og-card.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css">
+<script>document.documentElement.className+=" js";</script>
+
+</head>
+<body>
+
+<div class="atmosphere" aria-hidden="true">
+  <div class="atmosphere__grain"></div>
+  <div class="atmosphere__vignette"></div>
+</div>
+
+<header class="nav">
+  <div class="nav__inner">
+    <a class="wordmark" href="index.html" aria-label="AgentGod — home">
+      <span class="wordmark__name">AgentGod</span>
+      <span class="wordmark__sub">Creator and Destroyer of Agents</span>
+    </a>
+
+    <nav class="nav__links" id="nav-links" aria-label="Primary">
+      <a class="nav__link" href="index.html">Overview</a>
+      <a class="nav__link" href="how-it-works.html">How it works</a>
+      <a class="nav__link" href="philosophy.html">Philosophy</a>
+      <a class="nav__link" href="docs.html" aria-current="page">Docs</a>
+      <a class="nav__link btn btn--compact" href="https://github.com/uditstocks/AgentGOD" target="_blank" rel="noopener noreferrer">
+        <span>Launch app</span>
+        <svg class="btn__arrow" width="16" height="8" viewBox="0 0 16 8" fill="none" aria-hidden="true"><path d="M0 4h14M10 1l4 3-4 3" stroke="currentColor"/></svg>
+      </a>
+    </nav>
+
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle menu">
+      <span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <!-- ==================================================================
+       PAGE HEAD
+       ================================================================== -->
+  <section class="pagehead">
+    <div class="shell">
+      <p class="eyebrow eyebrow--bare" data-reveal="0">
+        <span class="eyebrow__index">04</span>
+        <span>Documentation</span>
+      </p>
+      <h1 class="display display--1 pagehead__title" data-reveal="1">
+        Write the objective.<br>Approve the plan.
+      </h1>
+      <p class="lede pagehead__lede" data-reveal="2">
+        Everything else is AgentGod's problem. Below: install, first run, scoping
+        tools, reading a trace, and stopping a fleet.
+      </p>
+    </div>
+  </section>
+
+  <!-- ==================================================================
+       DOCS
+       ================================================================== -->
+  <div class="shell">
+    <div class="docs">
+
+      <!-- Sidebar -->
+      <aside class="docs__nav" aria-label="Documentation sections">
+        <div class="docs__group">
+          <p class="footer__heading">Start</p>
+          <a href="#install">Install</a>
+          <a href="#first-run">First run</a>
+          <a href="#objectives">Writing objectives</a>
+        </div>
+        <div class="docs__group">
+          <p class="footer__heading">Control</p>
+          <a href="#scopes">Tools &amp; scopes</a>
+          <a href="#trace">Reading the trace</a>
+          <a href="#halt">Halting a fleet</a>
+        </div>
+        <div class="docs__group">
+          <p class="footer__heading">Reference</p>
+          <a href="#cli">CLI</a>
+          <a href="#changelog">Changelog</a>
+        </div>
+      </aside>
+
+      <!-- Content -->
+      <div class="docs__main">
+
+        <section class="doc-block" id="install">
+          <p class="label">01 — Install</p>
+          <h2>Install</h2>
+          <p>
+            AgentGod ships as a single binary with no runtime dependencies. Pick
+            your platform.
+          </p>
+
+          <div class="code">
+            <div class="code__bar"><span>shell</span><span>macOS · Linux</span></div>
+<pre><span class="c"># install</span>
+curl -fsSL <span class="s">https://get.agentgod.ai</span> | sh
+
+<span class="c"># verify</span>
+agentgod <span class="k">--version</span></pre>
+          </div>
+
+          <div class="code">
+            <div class="code__bar"><span>powershell</span><span>Windows</span></div>
+<pre>irm <span class="s">https://get.agentgod.ai/ps1</span> | iex
+
+agentgod <span class="k">--version</span></pre>
+          </div>
+
+          <p class="body-faint">
+            Set <code>AGENTGOD_API_KEY</code> in your environment before the first
+            run, or you will be prompted for it once and it will be stored in the
+            system keychain.
+          </p>
+        </section>
+
+        <section class="doc-block" id="first-run">
+          <p class="label">02 — First run</p>
+          <h2>First run</h2>
+          <p>
+            An objective is a sentence. AgentGod turns it into a plan and waits
+            for you.
+          </p>
+
+          <div class="code">
+            <div class="code__bar"><span>shell</span><span>interactive</span></div>
+<pre>agentgod run <span class="s">"compare the three leading vector databases
+              on cost, recall, and operational burden"</span></pre>
+          </div>
+
+          <h3>What you will see</h3>
+          <p>
+            A plan: the tracks it intends to open, the role and tool set for each,
+            and its estimate. Nothing spawns until you accept.
+          </p>
+
+          <div class="code">
+            <div class="code__bar"><span>output</span><span>plan · awaiting approval</span></div>
+<pre><span class="k">PLAN</span>  5 tracks · est. 4m · 5 agents
+
+  <span class="k">01</span>  scout.pricing     web, archive
+  <span class="k">02</span>  scout.benchmarks  web, papers
+  <span class="k">03</span>  analyst.recall    python, tabular
+  <span class="k">04</span>  analyst.ops       python, docs
+  <span class="k">05</span>  editor.synthesis  draft, cite
+
+<span class="c">[a] approve   [e] edit   [q] abort</span></pre>
+          </div>
+
+          <p>
+            Approve and it runs. The fleet is torn down automatically when the
+            artifact is written — you do not clean up after it.
+          </p>
+        </section>
+
+        <section class="doc-block" id="objectives">
+          <p class="label">03 — Writing objectives</p>
+          <h2>Writing objectives</h2>
+          <p>
+            A good objective states the outcome and the constraints, and leaves
+            the method alone. AgentGod plans better when it is told
+            <em>what done looks like</em> rather than which steps to take.
+          </p>
+
+          <div class="table-wrap">
+            <table class="table">
+              <thead>
+                <tr><th>Instead of</th><th>Write</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Vague</td>
+                  <td>“Research vector databases” → “Compare Qdrant, Weaviate and pgvector on cost at 10M vectors, recall@10, and on-call burden. Cite sources.”</td>
+                </tr>
+                <tr>
+                  <td>Over-specified</td>
+                  <td>“Open five tabs, then…” → state the outcome and let the planner choose the decomposition.</td>
+                </tr>
+                <tr>
+                  <td>Unbounded</td>
+                  <td>Add a stop condition: a deadline, a source count, or a budget.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Declaring a run in a file</h3>
+          <p>
+            For anything recurring, put the objective under version control.
+          </p>
+
+          <div class="code">
+            <div class="code__bar"><span>agentgod.toml</span><span>declarative run</span></div>
+<pre><span class="k">[objective]</span>
+goal      = <span class="s">"weekly competitive digest"</span>
+deadline  = <span class="s">"15m"</span>
+artifact  = <span class="s">"reports/digest-{date}.md"</span>
+
+<span class="k">[limits]</span>
+max_agents = <span class="s">8</span>
+budget     = <span class="s">"250k tokens"</span>
+
+<span class="k">[gates]</span>
+approve_plan = <span class="s">true</span>   <span class="c"># no spawn before a human accepts</span>
+
+<span class="k">[teardown]</span>
+on_complete = <span class="d">"terminate_all"</span>
+on_error    = <span class="d">"terminate_all"</span></pre>
+          </div>
+        </section>
+
+        <section class="doc-block" id="scopes">
+          <p class="label">04 — Tools &amp; scopes</p>
+          <h2>Tools &amp; scopes</h2>
+          <p>
+            Every agent is sealed at spawn with exactly the tools its track needs.
+            Scopes cannot be widened mid-run — if a track turns out to need more,
+            the orchestrator re-plans and asks you.
+          </p>
+
+          <div class="code">
+            <div class="code__bar"><span>agentgod.toml</span><span>least privilege</span></div>
+<pre><span class="k">[agents.scout]</span>
+tools    = [<span class="s">"web.read"</span>, <span class="s">"archive.read"</span>]
+network  = <span class="s">"allowlist"</span>
+allow    = [<span class="s">"*.gov"</span>, <span class="s">"*.edu"</span>, <span class="s">"docs.*"</span>]
+
+<span class="k">[agents.analyst]</span>
+tools    = [<span class="s">"python.sandbox"</span>, <span class="s">"fs.read"</span>]
+network  = <span class="d">"none"</span>          <span class="c"># cannot reach out at all</span>
+
+<span class="k">[agents.editor]</span>
+tools    = [<span class="s">"draft.write"</span>, <span class="s">"cite.verify"</span>]
+paths    = [<span class="s">"reports/"</span>]     <span class="c"># and nowhere else</span></pre>
+          </div>
+
+          <div class="table-wrap">
+            <table class="table">
+              <thead>
+                <tr><th>Field</th><th>Effect</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>tools</td><td>The complete tool set. Anything unlisted is unavailable, not merely discouraged.</td></tr>
+                <tr><td>network</td><td><code>none</code>, <code>allowlist</code>, or <code>open</code>. Defaults to <code>none</code>.</td></tr>
+                <tr><td>paths</td><td>Filesystem reach. Writes outside the list fail loudly.</td></tr>
+                <tr><td>budget</td><td>Per-agent token ceiling. On exhaustion the agent is terminated, not extended.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="doc-block" id="trace">
+          <p class="label">05 — Reading the trace</p>
+          <h2>Reading the trace</h2>
+          <p>
+            Every spawn, tool call, finding, and termination is recorded as it
+            happens. Follow it live, or replay it later.
+          </p>
+
+          <div class="code">
+            <div class="code__bar"><span>shell</span><span>live</span></div>
+<pre><span class="c"># follow the current run</span>
+agentgod watch <span class="k">--trace</span>
+
+<span class="c"># replay a finished run</span>
+agentgod trace <span class="s">7f3a·c21</span> <span class="k">--verbose</span>
+
+<span class="c"># which agent produced a given claim</span>
+agentgod trace <span class="s">7f3a·c21</span> <span class="k">--attribute</span> <span class="s">"recall@10 = 0.94"</span></pre>
+          </div>
+
+          <p class="body-faint">
+            The trace is append-only. There is no code path in which a privileged
+            action executes without a corresponding entry.
+          </p>
+        </section>
+
+        <section class="doc-block" id="halt">
+          <p class="label">06 — Halting a fleet</p>
+          <h2>Halting a fleet</h2>
+          <p>
+            One signal ends everything. Halting the orchestrator without halting
+            its agents would be the worst of both worlds, so it is not possible.
+          </p>
+
+          <div class="code">
+            <div class="code__bar"><span>shell</span><span>teardown</span></div>
+<pre><span class="c"># stop the current run and every agent under it</span>
+agentgod halt
+
+<span class="c"># stop one run by id</span>
+agentgod halt <span class="s">7f3a·c21</span>
+
+<span class="c"># confirm nothing survived</span>
+agentgod ps
+<span class="d">→ 0 agents live</span></pre>
+          </div>
+
+          <p>
+            A halted run still writes its trace and any partial artifact, so you
+            keep the work done up to that point.
+          </p>
+        </section>
+
+        <section class="doc-block" id="cli">
+          <p class="label">07 — Reference</p>
+          <h2>CLI</h2>
+
+          <div class="table-wrap">
+            <table class="table">
+              <thead>
+                <tr><th>Command</th><th>Description</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>agentgod run</td><td>Plan and execute an objective. Prompts for approval unless gates are disabled.</td></tr>
+                <tr><td>agentgod plan</td><td>Produce the plan and stop. Nothing spawns.</td></tr>
+                <tr><td>agentgod watch</td><td>Follow the active run's trace.</td></tr>
+                <tr><td>agentgod ps</td><td>List live agents and their scopes.</td></tr>
+                <tr><td>agentgod trace</td><td>Replay or query a completed run.</td></tr>
+                <tr><td>agentgod halt</td><td>Terminate a run and its entire fleet.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="doc-block" id="changelog">
+          <p class="label">08 — Changelog</p>
+          <h2>Changelog</h2>
+
+          <div class="table-wrap">
+            <table class="table">
+              <thead>
+                <tr><th>Version</th><th>Notes</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>0.1.0</td><td>First public build. Plan gate, parallel execution, full trace, absolute halt.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p class="body-faint">
+            AgentGod is early. Interfaces on this page may change before 1.0.
+          </p>
+        </section>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================================================================
+       CTA
+       ================================================================== -->
+  <section class="cta">
+    <div class="cta__stage" aria-hidden="true">
+      <figure class="slot slot--bare" data-slot="Summon plate&#10;2400 × 1000 · wide, low-key&#10;assets/cta-plate.jpg">
+        <img src="assets/cta-plate.jpg" alt="">
+      </figure>
+    </div>
+
+    <div class="shell cta__body">
+      <p class="eyebrow eyebrow--bare" data-reveal="0">
+        <span class="eyebrow__index">09</span>
+        <span>Ready when you are</span>
+      </p>
+      <h2 class="display display--1 cta__title" data-reveal="1">
+        Ready to summon a god?
+      </h2>
+      <p class="lede w-34" data-reveal="2">
+        Build. Break. Repeat. The choice is yours.
+      </p>
+      <div data-reveal="3">
+        <a class="btn" href="https://github.com/uditstocks/AgentGOD" target="_blank" rel="noopener noreferrer">
+          <span>Launch app</span>
+          <svg class="btn__arrow" width="16" height="8" viewBox="0 0 16 8" fill="none" aria-hidden="true"><path d="M0 4h14M10 1l4 3-4 3" stroke="currentColor"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="shell">
+    <div class="footer__top">
+      <div class="footer__col">
+        <a class="wordmark" href="index.html">
+          <span class="wordmark__name">AgentGod</span>
+          <span class="wordmark__sub">Creator and Destroyer of Agents</span>
+        </a>
+        <p class="footer__note">
+          An autonomous orchestrator. It builds the force, gets it done, and
+          leaves nothing behind.
+        </p>
+      </div>
+
+      <div class="footer__col">
+        <p class="footer__heading">Product</p>
+        <a href="index.html">Overview</a>
+        <a href="how-it-works.html">How it works</a>
+        <a href="https://github.com/uditstocks/AgentGOD" target="_blank" rel="noopener noreferrer">Launch app</a>
+        <a href="https://github.com/uditstocks/AgentGOD" target="_blank" rel="noopener noreferrer">Repository</a>
+      </div>
+
+      <div class="footer__col">
+        <p class="footer__heading">Read</p>
+        <a href="philosophy.html">Philosophy</a>
+        <a href="docs.html">Docs</a>
+        <a href="docs.html#changelog">Changelog</a>
+      </div>
+
+      <div class="footer__col">
+        <p class="footer__heading">Connect</p>
+        <a href="https://x.com/_AgentGod" target="_blank" rel="noopener noreferrer">X / Twitter</a>
+        <a href="https://discord.gg/zb5UKKkjJ" target="_blank" rel="noopener noreferrer">Discord</a>
+        <a href="https://github.com/uditstocks/AgentGOD" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="mailto:stevefrmspace@gmail.com">stevefrmspace@gmail.com</a>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <span>© <span data-year>2026</span> AgentGod · All rights reserved</span>
+
+      <div class="socials">
+        <a href="https://x.com/_AgentGod" target="_blank" rel="noopener noreferrer" aria-label="X">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 2H22l-6.8 7.8L23 22h-6.5l-5-6.6L5.6 22H2.5l7.2-8.3L1.4 2h6.6l4.7 6.2L18.9 2Zm-1.1 18h1.7L7.3 3.8H5.5L17.8 20Z"/></svg>
+        </a>
+        <a href="https://discord.gg/zb5UKKkjJ" target="_blank" rel="noopener noreferrer" aria-label="Discord">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.3 5.3A16.7 16.7 0 0 0 15.2 4l-.3.7a12.4 12.4 0 0 0-5.8 0L8.8 4a16.7 16.7 0 0 0-4.1 1.3C2.1 9.2 1.4 13 1.8 16.8a16.6 16.6 0 0 0 5 2.5l.6-1a10.9 10.9 0 0 1-1.8-.9l.4-.3a11.9 11.9 0 0 0 10 0l.4.3a11 11 0 0 1-1.8.9l.6 1a16.6 16.6 0 0 0 5-2.5c.5-4.4-.6-8.2-2.9-11.5ZM8.5 14.4c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Zm7 0c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Z"/></svg>
+        </a>
+        <a href="https://github.com/uditstocks/AgentGOD" target="_blank" rel="noopener noreferrer" aria-label="GitHub Repository">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2Z"/></svg>
+        </a>
+        <a href="docs.html" aria-label="Docs">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 4h6a2 2 0 0 1 2 2v14a2 2 0 0 0-2-2H4V4Zm16 0h-6a2 2 0 0 0-2 2v14a2 2 0 0 1 2-2h6V4Z"/></svg>
+        </a>
+      </div>
+
+      <span>Build · Break · Repeat</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

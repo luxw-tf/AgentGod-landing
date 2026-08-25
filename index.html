@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AgentGod — The Creator and Destroyer of Agents</title>
+<meta name="description" content="AgentGod is an autonomous orchestrator. It spawns specialised agents to think, act and adapt — then destroys them when the objective is met. You set the goal. It builds the force.">
+<meta name="theme-color" content="#08080A">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="AgentGod — The Creator and Destroyer of Agents">
+<meta property="og:description" content="An autonomous orchestrator. It builds the force. It gets it done. Then it leaves nothing behind.">
+<meta property="og:image" content="assets/og-card.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css">
+<script>document.documentElement.className+=" js";</script>
+
+</head>
+<body>
+
+<!-- Film grain + vignette, above everything, never interactive -->
+<div class="atmosphere" aria-hidden="true">
+  <div class="atmosphere__grain"></div>
+  <div class="atmosphere__vignette"></div>
+</div>
+
+<!-- ====================================================================
+     NAV
+     ==================================================================== -->
+<header class="nav">
+  <div class="nav__inner">
+    <a class="wordmark" href="index.html" aria-label="AgentGod — home">
+      <span class="wordmark__name">AgentGod</span>
+      <span class="wordmark__sub">Creator and Destroyer of Agents</span>
+    </a>
+
+    <nav class="nav__links" id="nav-links" aria-label="Primary">
+      <a class="nav__link" href="index.html" aria-current="page">Overview</a>
+      <a class="nav__link" href="how-it-works.html">How it works</a>
+      <a class="nav__link" href="philosophy.html">Philosophy</a>
+      <a class="nav__link" href="docs.html">Docs</a>
+      <a class="nav__link btn btn--compact" href="https://github.com/uditstocks/AgentGOD" target="_blank" rel="noopener noreferrer">
+        <span>Launch app</span>
+        <svg class="btn__arrow" width="16" height="8" viewBox="0 0 16 8" fill="none" aria-hidden="true"><path d="M0 4h14M10 1l4 3-4 3" stroke="currentColor"/></svg>
+      </a>
+    </nav>
+
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle menu">
+      <span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <!-- ==================================================================
+       HERO
+       ================================================================== -->
+  <section class="hero hero--video">
+    <div class="hero__stage" aria-hidden="true">
+      <!-- The still the edit resolves to. Sits underneath throughout, so it
+           also covers reduced motion and any failure to load. -->
+      <figure class="slot slot--bare" data-slot="Hero still&#10;portrait or landscape · dark, centred figure&#10;assets/hero-img.png">
+        <img src="assets/hero-img.png" alt="" fetchpriority="low" decoding="async">
+      </figure>
+
+      <!-- The edit leads: plays once, then dissolves to the still above.
+           data-video-duration is the asset length in ms, read off the HLS
+           manifest — retime the handoff here, not in the JS. -->
+      <div class="hero__video"
+           data-video="xJO00fRFGmMeATOyUs00TY8aFL1VbXvnpljVOX0101aEb4g"
+           data-video-duration="9657"></div>
+    </div>
+
+    <div class="hero__body">
+      <p class="eyebrow eyebrow--bare" data-reveal="0">
+        <span class="eyebrow__index">01</span>
+        <span>Autonomous orchestration</span>
+      </p>
+
+      <h1 class="display hero__title" data-reveal="1">
+        <span class="line">The creator</span>
+        <span class="line">and <span class="ink-destroy">destroyer</span></span>
+        <span class="line">of agents.</span>
+      </h1>
+
+      <p class="lede hero__lede" data-reveal="2">
+        You define the objective. AgentGod builds the force that meets it —
+        then dissolves it. Nothing lingers. Nothing to clean up.
+      </p>
+
+      <div class="hero__actions" data-reveal="3">
+        <a class="btn" href="#premise">
+          <span>Enter the system</span>
+          <svg class="btn__arrow" width="16" height="8" viewBox="0 0 16 8" fill="none" aria-hidden="true"><path d="M0 4h14M10 1l4 3-4 3" stroke="currentColor"/></svg>
+        </a>
+        <a class="btn btn--ghost" href="how-it-works.html">
+          <span>See the lifecycle</span>
+          <svg class="btn__arrow" width="16" height="8" viewBox="0 0 16 8" fill="none" aria-hidden="true"><path d="M0 4h14M10 1l4 3-4 3" stroke="currentColor"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero__meta">
+      <div class="hero__meta-inner">
+        <div class="metric" data-reveal="0">
+          <div class="metric__value">Parallel</div>
+          <div class="metric__key">Execution model</div>
+        </div>
+        <div class="metric" data-reveal="1">
+          <div class="metric__value">Ephemeral</div>
+          <div class="metric__key">Agent lifetime</div>
+        </div>
+        <div class="metric" data-reveal="2">
+          <div class="metric__value">Gated</div>
+          <div class="metric__key">Human approval</div>
+        </div>
+        <div class="metric" data-reveal="3">
+          <div class="metric__value">Zero</div>
+          <div class="metric__key">Residual state</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================================================================
+       MARQUEE — the one flourish
+       ================================================================== -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <div class="marquee__group">
+        <span class="marquee__item">Summon</span><span class="marquee__item marquee__star">✳</span>
+        <span class="marquee__item">Delegate</span><span class="marquee__item marquee__star">✳</span>
+        <span class="marquee__item">Execute</span><span class="marquee__item marquee__star">✳</span>
+        <span class="marquee__item">Verify</span><span class="marquee__item marquee__star">✳</span>
+        <span class="marquee__item">Dissolve</span><span class="marquee__item marquee__star">✳</span>
+      </div>
+      <div class="marquee__group">
+        <span class="marquee__item">Summon</span><span class="marquee__item marquee__star">✳</span>
+        <span class="marquee__item">Delegate</span><span class="marquee__item marquee__star">✳</span>
+        <span class="marquee__item">Execute</span><span class="marquee__item marquee__star">✳</span>
+        <span class="marquee__item">Verify</span><span class="marquee__item marquee__star">✳</span>
+        <span class="marquee__item">Dissolve</span><span class="marquee__item marquee__star">✳</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================================================================
+       02 — PREMISE
+       ================================================================== -->
+  <section class="section section--seam" id="premise">
+    <div class="shell">
+      <div class="head">
+        <p class="eyebrow head__eyebrow" data-reveal="0">
+          <span class="eyebrow__index">02</span>
+          <span>The premise</span>
+        </p>
+
+        <h2 class="display display--1 head__title" data-reveal="1">
+          An orchestrator.<br>Not another assistant.
+        </h2>
+
+        <div class="head__aside stack-5" data-reveal="2">
+          <p class="lede">
+            An assistant waits for the next instruction. AgentGod reads the
+            objective, decides what minds the work needs, and creates them.
+          </p>
+          <a class="btn btn--ghost" href="philosophy.html">
+            <span>Read the philosophy</span>
+            <svg class="btn__arrow" width="16" height="8" viewBox="0 0 16 8" fill="none" aria-hidden="true"><path d="M0 4h14M10 1l4 3-4 3" stroke="currentColor"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="split mt-6">
+        <div class="terminal" data-reveal="0">
+          <div class="terminal__bar">
+            <span><i class="terminal__dot"></i> Session · live</span>
+            <span>agentgod v0.1</span>
+          </div>
+          <div class="terminal__log" data-terminal="summon" aria-label="Example AgentGod session"></div>
+        </div>
+
+        <div data-reveal="1">
+          <p class="label">What that buys you</p>
+          <ul class="assertions">
+            <li>
+              <span class="assertions__key">01</span>
+              <span>Decomposed before attempted. Nothing done twice.</span>
+            </li>
+            <li>
+              <span class="assertions__key">02</span>
+              <span>Agents run at once, not in a queue.</span>
+            </li>
+            <li>
+              <span class="assertions__key">03</span>
+              <span>Tool access scoped per task, never wider.</span>
+            </li>
+            <li>
+              <span class="assertions__key">04</span>
+              <span>Objective met, fleet gone. No orphans.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================================================================
+       QUOTE — the Oppenheimer inheritance
+       ================================================================== -->
+  <section class="quote">
+    <div class="quote__stage" aria-hidden="true">
+      <figure class="slot slot--bare" data-slot="Quote plate&#10;2400 × 1200 · desaturated, wide&#10;assets/quote-plate.jpg">
+        <img src="assets/quote-plate.jpg" alt="">
+      </figure>
+    </div>
+
+    <div class="shell quote__body">
+      <blockquote class="quote__mark" data-reveal="0">
+        “Now I am become death, the destroyer of worlds.”
+        <span class="quote__coda">And also, their creator.</span>
+      </blockquote>
+      <div class="quote__cite" data-reveal="1">
+        <span>J. Robert Oppenheimer</span>
+        <span class="body-faint">Trinity · 1945 — the half we borrowed</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================================================================
+       05 — DOMAIN
+       ================================================================== -->
+  <section class="section section--seam" id="domain">
+    <div class="shell">
+      <div class="head">
+        <p class="eyebrow head__eyebrow" data-reveal="0">
+          <span class="eyebrow__index">05</span>
+          <span>Built for the impossible</span>
+        </p>
+        <h2 class="display display--1 head__title" data-reveal="1">
+          Work that is<br>too wide for one.
+        </h2>
+        <div class="head__aside" data-reveal="2">
+          <p class="lede">
+            If one agent could hold the whole problem, you would not need this.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid--4">
+        <div class="card" data-reveal="0">
+          <span class="card__index">01</span>
+          <h3 class="card__title">Deep research</h3>
+          <p class="card__text">Dozens of sources, read at once, reconciled into one answer.</p>
+        </div>
+        <div class="card" data-reveal="1">
+          <span class="card__index">02</span>
+          <h3 class="card__title">Multi-step operations</h3>
+          <p class="card__text">Long chains where step nine depends on step two.</p>
+        </div>
+        <div class="card" data-reveal="2">
+          <span class="card__index">03</span>
+          <h3 class="card__title">Large-scale analysis</h3>
+          <p class="card__text">A corpus, a codebase, a market. Every region covered once.</p>
+        </div>
+        <div class="card" data-reveal="3">
+          <span class="card__index">04</span>
+          <h3 class="card__title">Autonomous workflows</h3>
+          <p class="card__text">Objectives that run, verify, and stand down unattended.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================================================================
+       06 — CONTROL
+       ================================================================== -->
+  <section class="section" id="control">
+    <div class="shell shell--narrow">
+      <div class="control">
+        <div>
+          <p class="eyebrow" data-reveal="0">
+            <span class="eyebrow__index">06</span>
+            <span>In control. Always.</span>
+          </p>
+          <h2 class="display display--1 mt-5" data-reveal="1">
+            It answers<br>to you.
+          </h2>
+          <p class="lede mt-5 w-42" data-reveal="2">
+            Autonomy is not the absence of authority. It moves fast because the
+            boundaries are drawn first.
+          </p>
+
+          <ul class="assertions" data-reveal="3">
+            <li><span class="assertions__key">You</span><span>set the objective and the limits.</span></li>
+            <li><span class="assertions__key">You</span><span>approve the plan before any agent runs.</span></li>
+            <li><span class="assertions__key">You</span><span>see every action, every tool call, in the trace.</span></li>
+            <li><span class="assertions__key">You</span><span>own the outcome — and can halt the fleet at any moment.</span></li>
+          </ul>
+
+          <div class="mt-6" data-reveal="4">
+            <a class="btn" href="docs.html">
+              <span>Read the docs</span>
+              <svg class="btn__arrow" width="16" height="8" viewBox="0 0 16 8" fill="none" aria-hidden="true"><path d="M0 4h14M10 1l4 3-4 3" stroke="currentColor"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <figure class="slot slot--3x4" data-reveal="1" data-slot="Portrait plate&#10;1200 × 1600&#10;assets/agentgod-poster.png">
+          <img src="assets/agentgod-poster.png" alt="AgentGod key art">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================================================================
+       CTA
+       ================================================================== -->
+  <section class="cta" id="launch">
+    <div class="cta__stage" aria-hidden="true">
+      <figure class="slot slot--bare" data-slot="Summon plate&#10;2400 × 1000 · wide, low-key&#10;assets/cta-plate.jpg">
+        <img src="assets/cta-plate.jpg" alt="">
+      </figure>
+    </div>
+
+    <div class="shell cta__body">
+      <p class="eyebrow eyebrow--bare" data-reveal="0">
+        <span class="eyebrow__index">07</span>
+        <span>Ready when you are</span>
+      </p>
+      <h2 class="display display--1 cta__title" data-reveal="1">
+        Ready to summon a god?
+      </h2>
+      <p class="lede w-34" data-reveal="2">
+        Build. Break. Repeat. The choice is yours.
+      </p>
+      <div data-reveal="3">
+        <a class="btn" href="https://github.com/uditstocks/AgentGOD" target="_blank" rel="noopener noreferrer">
+          <span>Launch app</span>
+          <svg class="btn__arrow" width="16" height="8" viewBox="0 0 16 8" fill="none" aria-hidden="true"><path d="M0 4h14M10 1l4 3-4 3" stroke="currentColor"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ====================================================================
+     FOOTER
+     ==================================================================== -->
+<footer class="footer">
+  <div class="shell">
+    <div class="footer__top">
+      <div class="footer__col">
+        <a class="wordmark" href="index.html">
+          <span class="wordmark__name">AgentGod</span>
+          <span class="wordmark__sub">Creator and Destroyer of Agents</span>
+        </a>
+        <p class="footer__note">
+          An autonomous orchestrator. It builds the force, gets it done, and
+          leaves nothing behind.
+        </p>
+      </div>
+
+      <div class="footer__col">
+        <p class="footer__heading">Product</p>
+        <a href="index.html">Overview</a>
+        <a href="how-it-works.html">How it works</a>
+        <a href="https://github.com/uditstocks/AgentGOD" target="_blank" rel="noopener noreferrer">Launch app</a>
+        <a href="https://github.com/uditstocks/AgentGOD" target="_blank" rel="noopener noreferrer">Repository</a>
+      </div>
+
+      <div class="footer__col">
+        <p class="footer__heading">Read</p>
+        <a href="philosophy.html">Philosophy</a>
+        <a href="docs.html">Docs</a>
+        <a href="docs.html#changelog">Changelog</a>
+      </div>
+
+      <div class="footer__col">
+        <p class="footer__heading">Connect</p>
+        <a href="https://x.com/_AgentGod" target="_blank" rel="noopener noreferrer">X / Twitter</a>
+        <a href="https://discord.gg/zb5UKKkjJ" target="_blank" rel="noopener noreferrer">Discord</a>
+        <a href="https://github.com/uditstocks/AgentGOD" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="mailto:stevefrmspace@gmail.com">stevefrmspace@gmail.com</a>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <span>© <span data-year>2026</span> AgentGod · All rights reserved</span>
+
+      <div class="socials">
+        <a href="https://x.com/_AgentGod" target="_blank" rel="noopener noreferrer" aria-label="X">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 2H22l-6.8 7.8L23 22h-6.5l-5-6.6L5.6 22H2.5l7.2-8.3L1.4 2h6.6l4.7 6.2L18.9 2Zm-1.1 18h1.7L7.3 3.8H5.5L17.8 20Z"/></svg>
+        </a>
+        <a href="https://discord.gg/zb5UKKkjJ" target="_blank" rel="noopener noreferrer" aria-label="Discord">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.3 5.3A16.7 16.7 0 0 0 15.2 4l-.3.7a12.4 12.4 0 0 0-5.8 0L8.8 4a16.7 16.7 0 0 0-4.1 1.3C2.1 9.2 1.4 13 1.8 16.8a16.6 16.6 0 0 0 5 2.5l.6-1a10.9 10.9 0 0 1-1.8-.9l.4-.3a11.9 11.9 0 0 0 10 0l.4.3a11 11 0 0 1-1.8.9l.6 1a16.6 16.6 0 0 0 5-2.5c.5-4.4-.6-8.2-2.9-11.5ZM8.5 14.4c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Zm7 0c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Z"/></svg>
+        </a>
+        <a href="https://github.com/uditstocks/AgentGOD" target="_blank" rel="noopener noreferrer" aria-label="GitHub Repository">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2Z"/></svg>
+        </a>
+        <a href="docs.html" aria-label="Docs">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 4h6a2 2 0 0 1 2 2v14a2 2 0 0 0-2-2H4V4Zm16 0h-6a2 2 0 0 0-2 2v14a2 2 0 0 1 2-2h6V4Z"/></svg>
+        </a>
+      </div>
+
+      <span>Build · Break · Repeat</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How it works — AgentGod</title>
+<meta name="description" content="One objective in, one artifact out. The topology, the five moves, and the trace behind every AgentGod run.">
+<meta name="theme-color" content="#08080A">
+<meta property="og:title" content="How it works — AgentGod">
+<meta property="og:description" content="One objective in, one artifact out. The topology, the five moves, and the trace.">
+<meta property="og:image" content="assets/og-card.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css">
+<script>document.documentElement.className+=" js";</script>
+
+</head>
+<body>
+
+<div class="atmosphere" aria-hidden="true">
+  <div class="atmosphere__grain"></div>
+  <div class="atmosphere__vignette"></div>
+</div>
+
+<header class="nav">
+  <div class="nav__inner">
+    <a class="wordmark" href="index.html" aria-label="AgentGod — home">
+      <span class="wordmark__name">AgentGod</span>
+      <span class="wordmark__sub">Creator and Destroyer of Agents</span>
+    </a>
+
+    <nav class="nav__links" id="nav-links" aria-label="Primary">
+      <a class="nav__link" href="index.html">Overview</a>
+      <a class="nav__link" href="how-it-works.html" aria-current="page">How it works</a>
+      <a class="nav__link" href="philosophy.html">Philosophy</a>
+      <a class="nav__link" href="docs.html">Docs</a>
+      <a class="nav__link btn btn--compact" href="https://github.com/uditstocks/AgentGOD" target="_blank" rel="noopener noreferrer">
+        <span>Launch app</span>
+        <svg class="btn__arrow" width="16" height="8" viewBox="0 0 16 8" fill="none" aria-hidden="true"><path d="M0 4h14M10 1l4 3-4 3" stroke="currentColor"/></svg>
+      </a>
+    </nav>
+
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle menu">
+      <span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <!-- ==================================================================
+       PAGE HEAD
+       ================================================================== -->
+  <section class="pagehead">
+    <div class="shell">
+      <p class="eyebrow eyebrow--bare" data-reveal="0">
+        <span class="eyebrow__index">02</span>
+        <span>How it works</span>
+      </p>
+      <h1 class="display display--1 pagehead__title" data-reveal="1">
+        One objective in.<br>One artifact out.
+      </h1>
+      <p class="lede pagehead__lede" data-reveal="2">
+        Between those two points, a fleet is born, does its work, and is
+        deliberately destroyed. This is what happens in between.
+      </p>
+    </div>
+  </section>
+
+  <!-- ==================================================================
+       01 — TOPOLOGY
+       ================================================================== -->
+  <section class="section" id="topology">
+    <div class="shell">
+      <div class="head">
+        <p class="eyebrow head__eyebrow" data-reveal="0">
+          <span class="eyebrow__index">01</span>
+          <span>The topology</span>
+        </p>
+        <h2 class="display display--1 head__title" data-reveal="1">
+          One mind above.<br>Many hands below.
+        </h2>
+        <div class="head__aside stack-5" data-reveal="2">
+          <p class="lede">
+            You speak to one thing. That thing speaks to as many as the work
+            requires.
+          </p>
+          <p class="body-dim">
+            The orchestrator holds the objective, the plan, and the state. The
+            agents beneath it hold nothing but their own slice — which is exactly
+            why they can be discarded without loss.
+          </p>
+          <p class="body-dim">
+            Findings flow upward. Instructions flow down. Agents never negotiate
+            with each other, so there is no drift and no deadlock.
+          </p>
+        </div>
+      </div>
+
+      <div class="diagram mt-8" data-reveal="0">
+        <div class="node node--you">
+          <span class="node__name">You</span>
+          <span class="node__role">Objective · limits</span>
+        </div>
+        <div class="wire"></div>
+
+        <div class="node">
+          <span class="node__name">AgentGod</span>
+          <span class="node__role">Orchestrator</span>
+        </div>
+        <div class="wire"></div>
+
+        <div class="fanout">
+          <div class="worker">
+            <div class="worker__box">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M16 16l5 5"/></svg>
+            </div>
+            <span class="worker__label">Scout</span>
+          </div>
+          <div class="worker">
+            <div class="worker__box">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M16 16l5 5"/></svg>
+            </div>
+            <span class="worker__label">Scout</span>
+          </div>
+          <div class="worker">
+            <div class="worker__box">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M4 20V9M10 20V4M16 20v-7M22 20V7"/></svg>
+            </div>
+            <span class="worker__label">Analyst</span>
+          </div>
+          <div class="worker">
+            <div class="worker__box">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M4 20V9M10 20V4M16 20v-7M22 20V7"/></svg>
+            </div>
+            <span class="worker__label">Analyst</span>
+          </div>
+          <div class="worker">
+            <div class="worker__box">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M4 4h13l3 3v13H4z"/><path d="M8 10h8M8 14h5"/></svg>
+            </div>
+            <span class="worker__label">Editor</span>
+          </div>
+        </div>
+
+        <div class="wire wire--destroy mt-5"></div>
+        <div class="terminated">
+          <span>Terminated</span>
+          <span>Objective complete</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================================================================
+       02 — THE FIVE MOVES
+       ================================================================== -->
+  <section class="section" id="moves">
+    <div class="shell">
+      <div class="head head--stack">
+        <p class="eyebrow head__eyebrow" data-reveal="0">
+          <span class="eyebrow__index">02</span>
+          <span>The five moves</span>
+        </p>
+        <h2 class="display display--1 head__title" data-reveal="1">
+          The sequence<br>never changes.
+        </h2>
+        <p class="lede head__aside" data-reveal="2">
+          What changes is who gets summoned, how many, and how long they last.
+        </p>
+      </div>
+
+      <div class="grid grid--2">
+        <div class="card" data-reveal="0">
+          <span class="card__index">Move 01</span>
+          <h3 class="card__title">Summon</h3>
+          <p class="card__text">
+            The objective is parsed into independent tracks — chosen so no two
+            agents cover the same ground. AgentGod picks a role and a model per
+            track, then writes a plan.
+          </p>
+          <p class="card__text body-faint">
+            Nothing runs until you accept it. You can cut tracks, add them, or
+            rewrite the objective and re-plan.
+          </p>
+        </div>
+
+        <div class="card" data-reveal="1">
+          <span class="card__index">Move 02</span>
+          <h3 class="card__title">Delegate</h3>
+          <p class="card__text">
+            Each agent is handed its slice, its tools, and the context it needs —
+            and is denied everything else. A scout that only reads cannot write.
+            An analyst without network access cannot reach out.
+          </p>
+          <p class="card__text body-faint">
+            Scopes are sealed at spawn time. An agent cannot widen its own reach
+            mid-run.
+          </p>
+        </div>
+
+        <div class="card" data-reveal="2">
+          <span class="card__index">Move 03</span>
+          <h3 class="card__title">Execute</h3>
+          <p class="card__text">
+            Agents run at the same time. Wall-clock is set by the slowest track,
+            not the sum of all of them. Findings return to the orchestrator as
+            they land.
+          </p>
+          <p class="card__text body-faint">
+            When a track dead-ends, the orchestrator re-plans that branch alone —
+            the rest keep going.
+          </p>
+        </div>
+
+        <div class="card" data-reveal="3">
+          <span class="card__index">Move 04</span>
+          <h3 class="card__title">Verify</h3>
+          <p class="card__text">
+            Before anything reaches you, results are checked against the
+            objective and against their own sources. Claims that cannot be
+            supported are dropped, not softened.
+          </p>
+          <p class="card__text body-faint">
+            Coverage is checked too: what was not looked at is reported rather
+            than quietly omitted.
+          </p>
+        </div>
+
+        <div class="card card--wide" data-reveal="4">
+          <span class="card__index">Move 05</span>
+          <h3 class="card__title"><span class="ink-destroy">Dissolve</span></h3>
+          <p class="card__text">
+            The artifact is handed over. Then every agent is terminated,
+            credentials are revoked, and working context is released. The run
+            leaves a trace and an output — and nothing else.
+          </p>
+          <p class="card__text body-faint">
+            This is the step most systems skip. It is the reason the next run
+            starts clean.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================================================================
+       03 — THE TRACE
+       ================================================================== -->
+  <section class="section" id="trace">
+    <div class="shell">
+      <div class="head">
+        <p class="eyebrow head__eyebrow" data-reveal="0">
+          <span class="eyebrow__index">03</span>
+          <span>The trace</span>
+        </p>
+        <h2 class="display display--1 head__title" data-reveal="1">
+          Nothing happens<br>off the record.
+        </h2>
+        <div class="head__aside stack-5" data-reveal="2">
+          <p class="lede">
+            Every spawn, every tool call, every termination is written down as it
+            happens.
+          </p>
+          <p class="body-dim">
+            Autonomy without a record is just hope. The trace is the contract:
+            you can replay any run, see which agent produced which claim, and
+            stop the fleet mid-flight.
+          </p>
+        </div>
+      </div>
+
+      <div class="split mt-8">
+        <div class="terminal" data-reveal="0">
+          <div class="terminal__bar">
+            <span><i class="terminal__dot"></i> Trace · streaming</span>
+            <span>run 7f3a·c21</span>
+          </div>
+          <div class="terminal__log" data-terminal="lifecycle" aria-label="Example run trace"></div>
+        </div>
+
+        <div data-reveal="1">
+          <p class="label">Guarantees</p>
+          <div class="table-wrap mt-5">
+            <table class="table">
+              <thead>
+                <tr><th>Property</th><th>Behaviour</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Plan gate</td><td>No agent spawns before you accept the plan.</td></tr>
+                <tr><td>Scope</td><td>Tool access is fixed at spawn and cannot be widened.</td></tr>
+                <tr><td>Halt</td><td>A stop signal terminates the whole fleet, not just the leader.</td></tr>
+                <tr><td>Attribution</td><td>Every claim in the artifact resolves to an agent and a source.</td></tr>
+                <tr><td>Teardown</td><td>Run exits only when the live-agent count reaches zero.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================================================================
+       CTA
+       ================================================================== -->
+  <section class="cta">
+    <div class="cta__stage" aria-hidden="true">
+      <figure class="slot slot--bare" data-slot="Summon plate&#10;2400 × 1000 · wide, low-key&#10;assets/cta-plate.jpg">
+        <img src="assets/cta-plate.jpg" alt="">
+      </figure>
+    </div>
+
+    <div class="shell cta__body">
+      <p class="eyebrow eyebrow--bare" data-reveal="0">
+        <span class="eyebrow__index">04</span>
+        <span>Next</span>
+      </p>
+      <h2 class="display display--1 cta__title" data-reveal="1">
+        Now the reasoning behind it.
+      </h2>
+      <p class="lede w-34" data-reveal="2">
+        Why destruction is the feature, not the footnote.
+      </p>
+      <div data-reveal="3">
+        <a class="btn" href="philosophy.html">
+          <span>Read the philosophy</span>
+          <svg class="btn__arrow" width="16" height="8" viewBox="0 0 16 8" fill="none" aria-hidden="true"><path d="M0 4h14M10 1l4 3-4 3" stroke="currentColor"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="shell">
+    <div class="footer__top">
+      <div class="footer__col">
+        <a class="wordmark" href="index.html">
+          <span class="wordmark__name">AgentGod</span>
+          <span class="wordmark__sub">Creator and Destroyer of Agents</span>
+        </a>
+        <p class="footer__note">
+          An autonomous orchestrator. It builds the force, gets it done, and
+          leaves nothing behind.
+        </p>
+      </div>
+
+      <div class="footer__col">
+        <p class="footer__heading">Product</p>
+        <a href="index.html">Overview</a>
+        <a href="how-it-works.html">How it works</a>
+        <a href="https://github.com/uditstocks/AgentGOD" target="_blank" rel="noopener noreferrer">Launch app</a>
+        <a href="https://github.com/uditstocks/AgentGOD" target="_blank" rel="noopener noreferrer">Repository</a>
+      </div>
+
+      <div class="footer__col">
+        <p class="footer__heading">Read</p>
+        <a href="philosophy.html">Philosophy</a>
+        <a href="docs.html">Docs</a>
+        <a href="docs.html#changelog">Changelog</a>
+      </div>
+
+      <div class="footer__col">
+        <p class="footer__heading">Connect</p>
+        <a href="https://x.com/_AgentGod" target="_blank" rel="noopener noreferrer">X / Twitter</a>
+        <a href="https://discord.gg/zb5UKKkjJ" target="_blank" rel="noopener noreferrer">Discord</a>
+        <a href="https://github.com/uditstocks/AgentGOD" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="mailto:stevefrmspace@gmail.com">stevefrmspace@gmail.com</a>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <span>© <span data-year>2026</span> AgentGod · All rights reserved</span>
+
+      <div class="socials">
+        <a href="https://x.com/_AgentGod" target="_blank" rel="noopener noreferrer" aria-label="X">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 2H22l-6.8 7.8L23 22h-6.5l-5-6.6L5.6 22H2.5l7.2-8.3L1.4 2h6.6l4.7 6.2L18.9 2Zm-1.1 18h1.7L7.3 3.8H5.5L17.8 20Z"/></svg>
+        </a>
+        <a href="https://discord.gg/zb5UKKkjJ" target="_blank" rel="noopener noreferrer" aria-label="Discord">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.3 5.3A16.7 16.7 0 0 0 15.2 4l-.3.7a12.4 12.4 0 0 0-5.8 0L8.8 4a16.7 16.7 0 0 0-4.1 1.3C2.1 9.2 1.4 13 1.8 16.8a16.6 16.6 0 0 0 5 2.5l.6-1a10.9 10.9 0 0 1-1.8-.9l.4-.3a11.9 11.9 0 0 0 10 0l.4.3a11 11 0 0 1-1.8.9l.6 1a16.6 16.6 0 0 0 5-2.5c.5-4.4-.6-8.2-2.9-11.5ZM8.5 14.4c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Zm7 0c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Z"/></svg>
+        </a>
+        <a href="https://github.com/uditstocks/AgentGOD" target="_blank" rel="noopener noreferrer" aria-label="GitHub Repository">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2Z"/></svg>
+        </a>
+        <a href="docs.html" aria-label="Docs">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 4h6a2 2 0 0 1 2 2v14a2 2 0 0 0-2-2H4V4Zm16 0h-6a2 2 0 0 0-2 2v14a2 2 0 0 1 2-2h6V4Z"/></svg>
+        </a>
+      </div>
+
+      <span>Build · Break · Repeat</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
