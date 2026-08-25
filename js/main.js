@@ -309,6 +309,51 @@
   }
 
   /* ------------------------------------------------------------------------
+     Background audio — 0826.mp3
+     Continuous loop background music with no controls. Plays on load and
+     falls back to first user interaction if browser autoplay policy blocks it.
+     ---------------------------------------------------------------------- */
+
+  function initAudio() {
+    var audio = new Audio("assets/0826.mp3");
+    audio.loop = true;
+    audio.preload = "auto";
+
+    var played = false;
+    var startPlay = function () {
+      if (played) return;
+      var promise = audio.play();
+      if (promise !== undefined) {
+        promise.then(function () {
+          played = true;
+          removeHandlers();
+        }).catch(function () {
+          // Autoplay policy prevented immediate playback; waiting for first interaction
+        });
+      }
+    };
+
+    var onInteract = function () {
+      startPlay();
+    };
+
+    var events = ["click", "touchstart", "pointerdown", "keydown", "scroll"];
+    var removeHandlers = function () {
+      events.forEach(function (ev) {
+        window.removeEventListener(ev, onInteract, true);
+        document.removeEventListener(ev, onInteract, true);
+      });
+    };
+
+    events.forEach(function (ev) {
+      window.addEventListener(ev, onInteract, { capture: true, passive: true });
+      document.addEventListener(ev, onInteract, { capture: true, passive: true });
+    });
+
+    startPlay();
+  }
+
+  /* ------------------------------------------------------------------------
      Footer year
      ---------------------------------------------------------------------- */
 
@@ -327,6 +372,7 @@
     initTerminals();
     initDocsSpy();
     initYear();
+    initAudio();
 
     // Started immediately, not on window.load — waiting would put the edit
     // behind every image on the page, and the edit is the thing that leads.
